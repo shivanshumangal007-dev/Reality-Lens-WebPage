@@ -80,6 +80,8 @@ const Eye = ({side, emotion="normal"}) => {
       const irisLimit = 40;
       const pupilLimit = 20;
 
+      
+
       if (distance < proximityRadius) {
         const angle = Math.atan2(dy, dx);
         const strength = Math.min(distance / proximityRadius, 1);
@@ -160,7 +162,7 @@ const Eye = ({side, emotion="normal"}) => {
         className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-black"
         style={{
           background:
-            "radial-gradient(circle, #FFFFFF 50%, #111111 85%)",
+            "radial-gradient(circle, #FFFFFF 40%, #111111 85%)",
         }}
       >
         {/* Eyelid */}
