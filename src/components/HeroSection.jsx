@@ -35,7 +35,7 @@ const HeroSection = () => {
               How It Works
             </a>
           </div>
-          <Button type="Solid" text="Download Now"/>
+          <Button type="Solid" text="Download Now"><a href={"https://github.com/hannuverma/RealityLens/releases/download/windows.exe/RealityLens.exe"}></a></Button>
         </div>
        </nav>
        <div className="relative z-20 h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-200 to-transparent"></div>
@@ -66,7 +66,7 @@ const HeroSection = () => {
     	  		id=''
     	  		value={platform}
     	  		onChange={(e) => setPlatform(e.target.value)}
-    	  		className=" px-2 h-12 w-[40vw] rounded-full text-white font-semibold bg-grey-800 border border-cyan-300/20
+    	  		className=" hover:cursor-pointer px-2 h-12 w-[40vw] rounded-full text-white font-semibold bg-grey-800 border border-cyan-300/20
                  hover:border-cyan-100 hover:shadow-[0_0_32px_rgba(0,213,255,0.6)] transition-all duration-300
                  shadow-[inset_0_4px_10px_rgba(0,255,255,0.6),inset_0_-4px_10px_rgba(0,255,255,0.4)]
                  text-m md:text-lg md:w-80 md:px-6 md:w-full/3" 
@@ -76,7 +76,7 @@ const HeroSection = () => {
     	  		<option className='bg-black text-white' value='linux'>Linux</option>
     	  		<option className='bg-black text-white' value='Mobile App'>Mobile App</option>
     	  	</select>
-    	  	<button className=" px-2  max-h-12 h-[10vw] w-[40vw] rounded-full text-white  bg-cyan-800 border border-cyan-300/20
+    	  	<button className=" hover:cursor-pointer px-2  max-h-12 h-[10vw] w-[40vw] rounded-full text-white  bg-cyan-800 border border-cyan-300/20
                  hover:border-cyan-100 hover:shadow-[0_0_32px_rgba(0,213,255,0.6)] transition-all duration-300
                  shadow-[inset_0_4px_10px_rgba(0,0,0,0.6),inset_0_-4px_10px_rgba(0,255,255,0.4)]
                  text-[3vw] md:text-lg md:w-80 md:px-6 leading-tight md:2full/3">

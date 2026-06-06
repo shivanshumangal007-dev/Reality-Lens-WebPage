@@ -22,7 +22,9 @@ const Button = ({type,text}) => {
                 shadow-[inset_0_4px_10px_rgba(0,0,0,0.6),inset_0_-4px_10px_rgba(0,255,255,0.4)]
 
                 text-[3vw] md:text-lg
-                md:w-52 md:px-6"
+                md:w-52 md:px-6
+                
+                hover:cursor-pointer"
             >
             {text}
         </button>
