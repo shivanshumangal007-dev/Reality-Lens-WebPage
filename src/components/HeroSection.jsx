@@ -7,42 +7,42 @@ const HeroSection = () => {
 
   const [platform, setPlatform] = useState("windows(cloud)");
 
-  // useGSAP(()=>{
-  //   const tl = gsap.timeline();
-  //   tl.from("#bg",{
-  //     opacity:0,
-  //     duration: 0.5,
-  //     ease: "power1.inOut",
-  //     delay: 0.1,
-  //   })
-  //   tl.from('#navline',{
-  //     opacity:0,
-  //     scale: 0,
-  //     duration:1,
-  //     ease: "power1.inOut",
-  //   });
-  //   tl.from('#navbar',{
-  //     opacity:0,
-  //     duration:1,
-  //     ease: "power1.inOut",
-  //   },"<");
-  //   tl.from('#headHero',{
-  //     opacity:0,
-  //     yPercent: 10,
-  //     duration: 1,
-  //     ease:"power1.inOut"
-  //   },"-=0.5");
-  //   tl.from('#paraHero',{
-  //     opacity:0,
-  //     yPercent: 10,
-  //     duration: 1,
-  //     ease:"power1.inOut"
-  //   },"-=0.5");
-  //   tl.from("#buttons",{
-  //     opacity:0,
-  //     duration: 1,
-  //   },"-=0.5");
-  // })  
+  useGSAP(()=>{
+    const tl = gsap.timeline();
+    tl.from("#bg",{
+      opacity:0,
+      duration: 0.5,
+      ease: "power1.inOut",
+      delay: 0.1,
+    })
+    tl.from('#navline',{
+      opacity:0,
+      scale: 0,
+      duration:1,
+      ease: "power1.inOut",
+    });
+    tl.from('#navbar',{
+      opacity:0,
+      duration:1,
+      ease: "power1.inOut",
+    },"<");
+    tl.from('#headHero',{
+      opacity:0,
+      yPercent: 10,
+      duration: 1,
+      ease:"power1.inOut"
+    },"-=0.5");
+    tl.from('#paraHero',{
+      opacity:0,
+      yPercent: 10,
+      duration: 1,
+      ease:"power1.inOut"
+    },"-=0.5");
+    tl.from("#buttons",{
+      opacity:0,
+      duration: 1,
+    },"-=0.5");
+  })  
 
   return (
     <section
