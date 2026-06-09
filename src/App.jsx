@@ -3,6 +3,7 @@ import EyeSection from './components/EyeSection'
 import HeroSection from './components/HeroSection'
 import FeaturesSection from './components/FeaturesSection'
 import DataSection from './components/DataSection'
+import HowToSection from './components/HowToSection'
 
 
 const App = () => {
@@ -16,9 +17,10 @@ const App = () => {
           backgroundSize: "800px",
         }}
       />      
-      <HeroSection/>
+      {/* <HeroSection/>
       <DataSection/>
-      <EyeSection/>
+      <EyeSection/> */}
+      <HowToSection/>
     </div>
   )
 }

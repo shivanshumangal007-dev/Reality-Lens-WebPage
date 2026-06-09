@@ -43,8 +43,7 @@ const EyeSection = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: "top 50%",
-                    toggleActions: "play none none none",
+                    start: "top 60%",
                 },
             });
 
@@ -59,7 +58,7 @@ const EyeSection = () => {
                 scale: 1.5,
                 duration: 1.5,
                 ease: "power1.out",
-            },);
+            },"-=0.5");
 
             tl.from(
                 "#ring",
@@ -71,12 +70,12 @@ const EyeSection = () => {
                 },
                 "<"
             );
-            tl.from("#eye",{
-                opacity:0,
-                duration:1,
-                y: 5,
-                ease: "power1.inOut"
-            },"-=0.3");
+            // tl.from("#eye",{
+            //     opacity:0,
+            //     duration:1,
+            //     y: 5,
+            //     ease: "power1.inOut"
+            // },"-=0.3");
 
             tl.add(() => {
                 // const posts = gsap.utils.toArray(".orbit-post");
@@ -127,13 +126,12 @@ const EyeSection = () => {
                 yPercent:20,
                 duration:1,
                 stagger: 0.1,
-
             });
             textTl.from(paraSplit.lines,{
                 opacity:0,
                 yPercent:20,
-                duration:1,
-                stagger:0.1,
+                duration:2,
+                stagger:0.5,
             });
         });
 
