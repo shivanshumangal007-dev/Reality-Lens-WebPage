@@ -37,9 +37,10 @@ const FeaturesSection = () => {
   return (
     <div
       ref={sectionRef}
-      className="bg-transparent relative mt-24 w-screen flex flex-col gap-12 justify-center items-center text-white"
+      className="bg-transparent relative w-screen flex flex-col gap-12 justify-center items-center text-white"
     >
-      <h2 className="animate-item text-2xl md:text-4xl lg:text-6xl font-heading">
+      <img className="absolute sm:w-[200vw] -top-24 md:w-screen opacity-30 overflow-x-hidden" src="./images/FeaturesGrad.png"/>
+      <h2 className="animate-item mt-24 text-2xl md:text-4xl lg:text-6xl font-heading">
         Why Reality Lens?
       </h2>
 

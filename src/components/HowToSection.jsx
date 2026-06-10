@@ -25,7 +25,7 @@ const HowToSection = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=4000",
+          end: "+=3000",
           scrub: 1,
           pin: true,
         },
@@ -321,6 +321,11 @@ tl.fromTo(
         
         <img id="CircleGrad" className='absolute left-0 w-[12vw] bottom-[-10%] opacity-30' src="./images/HowToSection/CircleGrad.png"/>
         <img id="TriGrad" className='absolute right-0 w-[16vw] top-[-10%] opacity-30' src="./images/HowToSection/TriGrad.png"/>
+
+
+        <div
+          className="overflow-hidden mask-[linear-gradient(to_bottom,black_70%,transparent_100%)] [--webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"
+        ></div>
     </section>
   )
 }
