@@ -5,7 +5,7 @@ import MagicBento from './MagicBento'
 
 const CardsSection = () => {
   return (
-    <div className='bg-black h-screen w-screen text-white'>
+    <div className='bg-transparent h-screen w-screen text-white'>
         <MagicBento 
           textAutoHide={true}
           enableStars

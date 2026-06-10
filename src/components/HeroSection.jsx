@@ -72,11 +72,11 @@ const HeroSection = () => {
   return (
     <section
       id="HeroSection"
-      className="relative h-[125vh] w-screen overflow-visible bg-black
+      className="relative h-[125vh] w-screen overflow-visible bg-transparent
       "
       >
     
-       <img id="bg" src="/images/NewHeroBG.png" className="absolute -top-20 w-full h-full object-cover" alt="background" />
+       <img id="bg" src="/images/NewHeroBG.png" className="absolute opacity-70 -top-20 w-full h-[calc(100%+5rem)] object-cover" alt="background" />
        
        <nav id="navbar" className=" relative z-20 h-20 flex justify-between items-center px-8 md:px-12 bg-black/25 backdrop-blur-md">
         <a href="#" className="flex items-center gap-2">

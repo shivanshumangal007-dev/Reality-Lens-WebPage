@@ -39,6 +39,10 @@ const EyeSection = () => {
         return () => window.removeEventListener("resize", updateRadius);
     }, []);
 
+    useEffect(() => {
+        ScrollTrigger.refresh();
+    }, [radius]);
+
     useGSAP(() =>{
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -138,9 +142,9 @@ const EyeSection = () => {
     return (
     <div
         id="eyeSection"
-        className="relative w-screen flex justify-center -top-36 overflow-visible"
+        className="relative w-screen flex justify-center -mt-36 overflow-visible"
         style={{
-            minHeight: Math.max(radius * 2 + 450, window.innerHeight),
+            minHeight: Math.max(radius * 2 + 320, window.innerHeight),
         }}
     >
         {/* HERO TEXT */}
@@ -191,9 +195,9 @@ const EyeSection = () => {
 
         <section
             ref={containerRef}
-            className="relative w-screen overflow-visible bg-black"
+            className="relative w-screen overflow-visible bg-transparent"
             style={{
-                minHeight: Math.max(radius * 2 + 450, window.innerHeight),
+                minHeight: Math.max(radius * 2 + 320, window.innerHeight),
             }}
         >
             {/* BACKGROUND */}
