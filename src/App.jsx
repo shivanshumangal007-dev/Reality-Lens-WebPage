@@ -21,6 +21,7 @@ const App = () => {
       <DataSection/>
       <EyeSection/>
       <HowToSection/>
+      <FeaturesSection/>
     </div>
   )
 }

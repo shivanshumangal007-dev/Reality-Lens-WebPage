@@ -24,7 +24,7 @@ const HowToSection = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top top",
+          start: "top -50%",
           end: "+=4000",
           scrub: 1,
           pin: true,
@@ -37,7 +37,7 @@ const HowToSection = () => {
      tl.from("#title1", {
         opacity: 0,
         yPercent: 30,
-        duration: 1,
+        duration: 0.25,
       });
 
       tl.from(
@@ -47,7 +47,7 @@ const HowToSection = () => {
           yPercent: 20,
           duration: 1,
         },
-        "<0.2"
+        "<0.8"
       );
 
       tl.from(
