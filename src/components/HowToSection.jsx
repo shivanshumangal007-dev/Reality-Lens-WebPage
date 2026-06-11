@@ -264,7 +264,7 @@ tl.fromTo(
     
 
   return (
-    <section ref={sectionRef} className='h-screen w-screen bg-transparent text-white flex flex-col justify-center items-center overflow-hidden'>
+    <section ref={sectionRef} id="HowItWorks" className='h-screen w-screen bg-transparent text-white flex flex-col justify-center items-center overflow-hidden'>
         <div className="relative h-24 mt-12 w-full flex justify-center items-center">
           <h1
             id="title1"

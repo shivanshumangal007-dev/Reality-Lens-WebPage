@@ -6,6 +6,7 @@ import DataSection from './components/DataSection'
 import HowToSection from './components/HowToSection'
 import LenisProvider from './components/LenisProvider'
 import CTA from './components/CTA'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -19,12 +20,13 @@ const App = () => {
           backgroundSize: "800px",
         }}
       />      
-      {/* <HeroSection/>
+      <HeroSection/>
       <DataSection/>
       <EyeSection/>
       <HowToSection/>
-      <FeaturesSection/> */}
-      <CTA/>
+      <FeaturesSection/>
+      {/* <CTA/> */}
+      <Footer/>
     </div>
   )
 }
