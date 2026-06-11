@@ -1,5 +1,4 @@
 import React from 'react'
-import DarkVeil from './DarkVeilBG.jsx';
 
 const CTA = () => {
   return (

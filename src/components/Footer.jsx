@@ -93,7 +93,7 @@ const Footer = () => {
                     </li>
 
                     <li>
-                        <a href="#" title="" className="flex text-base transition-all duration-200 hover:text-cyan-600 "> Shreyansh Kumar </a>
+                        <a href="" title="" className="flex text-base transition-all duration-200 hover:text-cyan-600 "> Shreyansh Kumar </a>
                     </li>
                 </ul>
             </div>
