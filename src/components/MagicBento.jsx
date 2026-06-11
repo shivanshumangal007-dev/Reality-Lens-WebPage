@@ -8,37 +8,37 @@ const MOBILE_BREAKPOINT = 768;
 
 const cardData = [
   {
-    color: '#022A2A',
+    color: '#155e7550',
     title: 'Fast and Lightweight',
     description: 'Negligible operation load. Stays out of your way until you need it.',
     label: ''
   },
    {
-    color: '#022A2A',
+    color: '#155e7550',
     title: 'High DPI Accuracy',
     description: 'Supports 4K UIX pipelines with sub-pixel sampling precision.',
     label: ''
   },
   {
-    color: '#022A2A',
+    color: '#155e7550',
     title: 'Native Windows Integration',
     description: 'Built specifically for Windows 10/11 using Python and PyQt5 for a clean native desktop experience.',
     label: ''
   },
     {
-    color: '#022A2A',
+    color: '#155e7550',
     title: 'Modular AI Architecture',
     description: 'Flexible structure made of Python, PYQT6, Gemini AI, Phash/Clip for faster and reliable results.',
     label: ''
   },
   {
-    color: '#022A2A',
+    color: '#155e7550',
     title: 'Privacy-First Processing',
     description: 'Secure analysis workflows so sensitive visuals remain protected.',
     label: ''
   },
   {
-    color: '#022A2A',
+    color: '#155e7550',
     title: 'Real-Time Analysis',
     description: 'Reality Lens analyses light differences, JPEG artifacts, and Geometry instantly.',
     label: ''
