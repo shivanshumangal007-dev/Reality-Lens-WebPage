@@ -28,7 +28,7 @@ const Footer = () => {
             <div className="col-span-2 md:col-span-4 lg:col-span-4 lg:pr-8">
                 <img className="sm:w-[40vw] md:w-[20vw] " src="./images/LogoFull.png" alt="" />
 
-                <p className="text-base leading-relaxed text-white mt-7">Amet minim mollit </p>
+                <p className="text-base leading-relaxed text-white mt-7">Reality Lens verifies information against reliable sources to help you determine whether a claim is true, false, or misleading. </p>
 
                 <ul className="flex items-center space-x-3 mt-9">
                    
