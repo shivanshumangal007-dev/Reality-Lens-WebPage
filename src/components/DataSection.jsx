@@ -21,19 +21,19 @@ const DataSection = () => {
 
         '>
             <div className=' gap-2 h-full flex flex-col justify-center items-center'>
-                <h1 className='font-heading text-4xl md:text-5xl'><CountUp from={0} to={5} duration={1}/> sec</h1>
+                <h1 className='font-heading text-4xl md:text-5xl'><CountUp from={0} to={5} duration={1.5}/> sec</h1>
                 <p className='font-body font-'>Average Verdict Time</p>
             </div>
             <div className=' gap-2 h-full flex flex-col justify-center items-center'>
-                <h1 className='font-heading text-4xl md:text-5xl'><CountUp from={0} to={3} duration={1}/> AI-Models</h1>
+                <h1 className='font-heading text-4xl md:text-5xl'><CountUp from={0} to={3} duration={1.5}/> AI-Models</h1>
                 <p className='font-body font-'>On Verification System</p>
             </div>
             <div className=' gap-2 h-full flex flex-col justify-center items-center'>
-                <h1 className='font-heading text-4xl md:text-5xl'><CountUp from={0} to={5} duration={1}/> Sources</h1>
+                <h1 className='font-heading text-4xl md:text-5xl'><CountUp from={0} to={10} duration={1.5}/> Sources</h1>
                 <p className='font-body font-'>Per Claim with Explaination</p>
             </div>
             <div className=' gap-2 h-full flex flex-col justify-center items-center'>
-                <h1 className='font-heading text-4xl md:text-5xl'><CountUp from={0} to={1} duration={1}/> HotKey</h1>
+                <h1 className='font-heading text-4xl md:text-5xl'><CountUp from={0} to={1} duration={1.5}/> HotKey</h1>
                 <p className='font-body font-'>Instant Run : Ctrl+Shift+L</p>
             </div>
         </div>
