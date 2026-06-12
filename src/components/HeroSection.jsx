@@ -97,13 +97,13 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 					console.log("Image loaded");
 				}}
 				src='/images/NewHeroBG.png'
-				className='absolute opacity-70 -top-20 w-full h-[calc(100%+5rem)] object-cover'
+				className={`absolute -top-20 w-full h-[calc(100%+5rem)] object-cover ${isImageLoaded ? "opacity-70" : "opacity-0"}`}
 				alt='background'
 			/>
 
 			<nav
 				id='navbar'
-				className=' relative z-20 h-20 flex justify-between items-center px-8 md:px-12 bg-black/25 backdrop-blur-md'
+				className={`relative z-20 h-20 flex justify-between items-center px-8 md:px-12 bg-black/25 backdrop-blur-md ${isImageLoaded ? "opacity-100" : "opacity-0 pointer-events-none"}`}
 			>
 				<a
 					href='#'
@@ -149,12 +149,12 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 			</nav>
 			<div
 				id='navline'
-				className='relative z-20 h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-200 to-transparent'
+				className={`relative z-20 h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-200 to-transparent ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
 			></div>
 
 			<div
-				className='relative z-30 text-white flex flex-col gap-6 h-[80vh] px-8  justify-center items-center text-center
-                     md:px-12 md:justify-end md:w-[50vw] md:items-start md:text-left'
+				className={`relative z-30 text-white flex flex-col gap-6 h-[80vh] px-8  justify-center items-center text-center
+                     md:px-12 md:justify-end md:w-[50vw] md:items-start md:text-left ${isImageLoaded ? "opacity-100" : "opacity-0 pointer-events-none"}`}
 			>
 				<h1
 					id='headHero'

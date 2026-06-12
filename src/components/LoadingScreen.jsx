@@ -5,7 +5,7 @@ const LoadingScreen = ({isImageLoaded}) => {
     useEffect(() => {
         if (isImageLoaded) {
            gsap.to("#loading-screen", {
-            width: 0,
+            xPercent: 100,
             duration: 1,
             ease: "power1.inOut",
             onComplete: () => {
@@ -20,7 +20,7 @@ const LoadingScreen = ({isImageLoaded}) => {
     }, [isImageLoaded]);
 
   return (
-    <div className='fixed top-0 left-0 w-[100vw] h-screen bg-black z-1' id='loading-screen'>
+    <div className='fixed top-0 left-0 w-[100vw] h-screen bg-black z-50' id='loading-screen'>
       
     </div>
   )
