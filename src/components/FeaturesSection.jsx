@@ -35,13 +35,13 @@ const FeaturesSection = () => {
         {
           opacity: 0,
           y: 30,
+          duration:1,
         },
         {
           opacity: 1,
           y: 0,
           duration: 1,
           ease: 'power1.inOut',
-          stagger: 1,
         }
       )
     },"-=0.3")
