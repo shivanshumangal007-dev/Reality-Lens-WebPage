@@ -50,7 +50,7 @@ const FeaturesSection = () => {
     <div
       id="Features"
       ref={sectionRef}
-      className="bg-transparent relative w-screen flex flex-col gap-12 justify-center items-center text-white"
+      className="bg-transparent relative w-screen flex flex-col gap-12 justify-center items-center text-white mt-20"
     > 
       <div className='realtive z-30 sm:h-32 sm:gap-2 md:h-48 lg: h-96  border-y-2 border-cyan-500 gap-4 w-screen bg-black flex flex-col justify-center items-center'>
           <h2 className="FeatureHead text-2xl md:text-4xl lg:text-6xl font-heading text-white">
