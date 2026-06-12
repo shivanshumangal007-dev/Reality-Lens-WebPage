@@ -33,8 +33,9 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 			tl.from("#navline", {
 				opacity: 0,
 				scale: 0,
-				duration: 1,
-				ease: "power1.inOut",
+				duration: 3,
+				ease: "power4.Out",
+				delay: 0.5,
 			});
 			tl.from(
 				"#navbar",
@@ -43,7 +44,7 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 					duration: 1,
 					ease: "power1.inOut",
 				},
-				"<",
+				"-=0.5",
 			);
 
 			const headHeroSplit = new SplitText("#headHero", { type: "words" });
