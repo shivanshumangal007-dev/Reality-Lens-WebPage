@@ -264,70 +264,112 @@ tl.fromTo(
     
 
   return (
-    <section ref={sectionRef} id="HowItWorks" className='h-screen w-screen bg-transparent text-white flex flex-col justify-center items-center overflow-hidden'>
-        <div className="relative h-24 mt-12 w-full flex justify-center items-center">
-          <h1
-            id="title1"
-            className="absolute text-2xl md:text-4xl lg:text-6xl font-heading"
-          >
-            1. Got a Suspicious Post?
-          </h1>
+		<section
+			ref={sectionRef}
+			id='HowItWorks'
+			className='h-screen w-screen bg-transparent text-white flex flex-col justify-center items-center '
+		>
+			<div className='relative h-24 mt-12 w-full flex justify-center items-center'>
+				<h1
+					id='title1'
+					className='absolute text-2xl md:text-4xl lg:text-6xl font-heading'
+				>
+					1. Got a Suspicious Post?
+				</h1>
 
-          <h1
-            id="title2"
-            className="absolute text-2xl md:text-4xl lg:text-6xl font-heading"
-          >
-            2. Press The HotKeys!!
-          </h1>
+				<h1
+					id='title2'
+					className='absolute text-2xl md:text-4xl lg:text-6xl font-heading'
+				>
+					2. Press The HotKeys!!
+				</h1>
 
-          <h1
-            id="title3"
-            className="absolute text-2xl md:text-4xl lg:text-6xl font-heading"
-          >
-            3. Select The Post
-          </h1>
+				<h1
+					id='title3'
+					className='absolute text-2xl md:text-4xl lg:text-6xl font-heading'
+				>
+					3. Select The Post
+				</h1>
 
-          <h1
-            id="title4"
-            className="absolute text-2xl md:text-4xl lg:text-6xl font-heading"
-          >
-            4. Reality Lens get to work
-          </h1>
+				<h1
+					id='title4'
+					className='absolute text-2xl md:text-4xl lg:text-6xl font-heading'
+				>
+					4. Reality Lens get to work
+				</h1>
 
-          <h1
-            id="title5"
-            className="absolute text-2xl md:text-4xl lg:text-6xl font-heading"
-          >
-            5. Get Your Instant Verdict
-          </h1>
-        </div>
-        
-        <div id="Xwindow" className='relative sm:w-[90vw] md:w-[80vw] overflow-hidden'>
-          <div id="Window1">
-            <img className="block w-full" src="./images/HowToSection/Window.png"/>
-          </div>
-          <div id="Window2" className="absolute inset-0">
-            <img className="block w-full" src="./images/HowToSection/Window2.png"/>
-          </div>
-          <img id="Loading" className='absolute h-[14vw] md:h-[9vw] lg:h-[8vw] bottom-[5%] right-[4%]' src="./images/HowToSection/Loading.png"/>
-          <img id="Verdict" className='absolute w-[50vw] md:w-[36vw] lg:w-[30vw] bottom-[5%] right-[4%]' src="./images/HowToSection/Results.png"/>
-        </div>
+				<h1
+					id='title5'
+					className='absolute text-2xl md:text-4xl lg:text-6xl font-heading'
+				>
+					5. Get Your Instant Verdict
+				</h1>
+			</div>
+			<div className='h-[80vh] mb-30'>
+				<div
+					id='Xwindow'
+					className='relative sm:w-[90vw] md:w-[80vw] overflow-hidden'
+				>
+					<div id='Window1'>
+						<img
+							className='block w-full'
+							src='./images/HowToSection/Window.png'
+						/>
+					</div>
+					<div
+						id='Window2'
+						className='absolute inset-0'
+					>
+						<img
+							className='block w-full'
+							src='./images/HowToSection/Window2.png'
+						/>
+					</div>
+					<img
+						id='Loading'
+						className='absolute h-[14vw] md:h-[9vw] lg:h-[8vw] bottom-[20%] right-[4%]'
+						src='./images/HowToSection/Loading.png'
+					/>
+					<img
+						id='Verdict'
+						className='absolute w-[50vw] md:w-[36vw] lg:w-[30vw] bottom-[17%] right-[4%]'
+						src='./images/HowToSection/Results.png'
+					/>
+				</div>
+			</div>
 
-        <div id="keys" className='absolute flex flex-row w-screen items-center h-[14vw]  md:h-[10vw] lg:h-[8vw]   justify-center bottom-12'>
-            <img className="h-full " src="./images/HowToSection/Key1.png"/>
-            <img className="h-full " src="./images/HowToSection/Key2.png"/>
-            <img className="h-full " src="./images/HowToSection/Key3.png"/>
-        </div>
-        
-        <img id="CircleGrad" className='absolute left-0 w-[12vw] bottom-[-10%] opacity-30' src="./images/HowToSection/CircleGrad.png"/>
-        <img id="TriGrad" className='absolute right-0 w-[16vw] top-[-10%] opacity-30' src="./images/HowToSection/TriGrad.png"/>
+			<div
+				id='keys'
+				className='absolute flex flex-row w-screen items-center h-[14vw]  md:h-[10vw] lg:h-[8vw]   justify-center bottom-12'
+			>
+				<img
+					className='h-full '
+					src='./images/HowToSection/Key1.png'
+				/>
+				<img
+					className='h-full '
+					src='./images/HowToSection/Key2.png'
+				/>
+				<img
+					className='h-full '
+					src='./images/HowToSection/Key3.png'
+				/>
+			</div>
 
+			<img
+				id='CircleGrad'
+				className='absolute left-0 w-[12vw] bottom-[-10%] opacity-30'
+				src='./images/HowToSection/CircleGrad.png'
+			/>
+			<img
+				id='TriGrad'
+				className='absolute right-0 w-[16vw] top-[-10%] opacity-30'
+				src='./images/HowToSection/TriGrad.png'
+			/>
 
-        <div
-          className="overflow-hidden mask-[linear-gradient(to_bottom,black_70%,transparent_100%)] [--webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]"
-        ></div>
-    </section>
-  )
+			<div className='overflow-hidden mask-[linear-gradient(to_bottom,black_70%,transparent_100%)] [--webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]'></div>
+		</section>
+	);
 }
 
 export default HowToSection
