@@ -119,23 +119,23 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 					</h1>
 				</a>
 
-				<div className='flex items-center gap-6 text-white'>
+				<div className='flex items-center gap-6 text-gray-400'>
 					<div className='hidden md:flex gap-6'>
 						<a
 							href='https://github.com/hannuverma/RealityLens.git'
-							className='text-xl'
+							className='text-xl  hover:text-white'
 						>
 							GitHub
 						</a>
 						<a
 							href='#Features'
-							className='text-xl'
+							className='text-xl  hover:text-white'
 						>
 							Features
 						</a>
 						<a
 							href='#HowItWorks'
-							className='text-xl'
+							className='text-xl  hover:text-white'
 						>
 							How It Works
 						</a>
