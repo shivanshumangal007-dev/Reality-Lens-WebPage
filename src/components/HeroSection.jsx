@@ -1,7 +1,8 @@
-import { useState } from "react";
 import Button from "../components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useState } from "react";
+import { Copy, Check } from "lucide-react";
 
 import SplitText from "gsap/SplitText";
 gsap.registerPlugin(SplitText);
@@ -21,6 +22,26 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 		window.location.href = downloadLink;
 	};
 
+
+	const command =
+		"curl -fsSL https://your-install-command.sh | bash";
+
+		const [copied, setCopied] = useState(false);
+
+		const handleCopy = async () => {
+		try {
+			await navigator.clipboard.writeText(command);
+
+			setCopied(true);
+
+			setTimeout(() => {
+			setCopied(false);
+			}, 2000);
+		} catch (err) {
+			console.error("Failed to copy:", err);
+		}
+		};
+
 	useGSAP(() => {
     if(isImageLoaded){
       const tl = gsap.timeline();
@@ -33,7 +54,7 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 			tl.from("#navline", {
 				opacity: 0,
 				scale: 0,
-				duration: 3,
+				duration: 1,
 				ease: "power4.Out",
 				delay: 0.5,
 			});
@@ -228,6 +249,54 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 						Download for {platform.charAt(0).toUpperCase() + platform.slice(1)}
 					</Button>
 				</div>
+				{platform === "mac" && (
+					<div className="
+							absolute
+							top-full
+							mt-4
+
+							left-1/2
+							-translate-x-1/2
+							md:left-8
+							md:translate-x-0
+
+							z-50
+
+							w-[90vw]
+							max-w-[760px]
+
+							rounded-2xl
+							border border-cyan-400/30
+							bg-black/80
+							backdrop-blur-md
+							p-4
+
+							shadow-[0_0_30px_rgba(34,211,238,0.25)]
+						"
+  					>	
+						<p className="mb-2 text-white font-medium">
+							macOS installation requires a one-line Terminal command.
+							Copy and run the command below:
+						</p>
+
+						<div className="flex items-center justify-between gap-3">
+							<code className="text-cyan-300 font-mono text-sm overflow-x-auto">
+							{command}
+							</code>
+
+							<button
+							onClick={handleCopy}
+							className="flex-shrink-0 p-2 rounded-lg hover:bg-white/10 transition"
+							>
+							{copied ? (
+								<Check size={18} className="text-green-400" />
+							) : (
+								<Copy size={18} className="text-cyan-300" />
+							)}
+							</button>
+						</div>
+					</div>
+				)}
 			</div>
 		</section>
 	);
