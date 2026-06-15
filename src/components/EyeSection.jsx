@@ -286,12 +286,12 @@ const EyeSection = () => {
             </div>
 
             {/* EYE */}
-            {/* <div
+            <div
                 id="eye"
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex scale-75 md:scale-100"
             >
                 <Eye side="left" emotion={emotion} />
-            </div> */}
+            </div>
         </section>
     </div>
 );

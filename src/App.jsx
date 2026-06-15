@@ -8,12 +8,18 @@ import LenisProvider from './components/LenisProvider'
 import Footer from './components/Footer'
 import CTASection from './components/CTASection'
 import LoadingScreen from './components/LoadingScreen'
+import { SpringMouseFollow } from './components/SpringMouseFollow'
+
 
 const App = () => {
 	const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
     <div className='relative bg-black w-screen overflow-hidden'>
+      
+        <div className='z-50'>
+          <SpringMouseFollow/>
+      </div>
       <LenisProvider/>
       <div
         className="absolute inset-0 opacity-20 z-0 pointer-events-none"

@@ -202,16 +202,18 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 				<div
 					id='buttons'
 					className='flex flex-col items-center gap-3 sm:flex-row md:w-[40vw] md:[&>*:first-child]:flex-[1] md:[&>*:last-child]:flex-[3] sm:[&>*]:w-auto'
-				>
+				>	
+				<div className=" hover:cursor-pointer px-2 h-12 w-[40vw] rounded-full text-white font-semibold bg-grey-800 border border-cyan-300/20
+                 hover:border-cyan-100 hover:shadow-[0_0_32px_rgba(0,213,255,0.6)] transition-all duration-300
+                 shadow-[inset_0_4px_10px_rgba(0,255,255,0.6),inset_0_-4px_10px_rgba(0,255,255,0.4)]
+                 text-sm md:text-lg md:w-80 md:px-6 md:w-full/3 flex items-center justify-center">
+
 					<select
 						name='OS'
 						id=''
 						value={platform}
 						onChange={(e) => setPlatform(e.target.value)}
-						className=' hover:cursor-pointer px-2 h-12 w-[40vw] rounded-full text-white font-semibold bg-grey-800 border border-cyan-300/20
-                 hover:border-cyan-100 hover:shadow-[0_0_32px_rgba(0,213,255,0.6)] transition-all duration-300
-                 shadow-[inset_0_4px_10px_rgba(0,255,255,0.6),inset_0_-4px_10px_rgba(0,255,255,0.4)]
-                 text-sm md:text-lg md:w-80 md:px-6 md:w-full/3'
+						className='w-full text-sm md:text-lg '
 					>
 						<option
 							className='bg-black text-white'
@@ -238,6 +240,7 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 							Mobile App
 						</option>
 					</select>
+				</div>
 					<Button
 						type='Solid'
 						onClick={handleDownload}

@@ -1,44 +1,53 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const Eye = ({side, emotion="normal"}) => {
+const Eye = ({ side, emotion = "normal" }) => {
   const eyeRef = useRef(null);
   const irisRef = useRef(null);
   const pupilRef = useRef(null);
   const eyelidRef = useRef(null);
 
+  const SIZE = 40;
+
+  const IRIS_SIZE = SIZE * 0.6;
+  const HIGHLIGHT_SIZE = SIZE * 0.1;
+  const BORDER_WIDTH = SIZE * 0.025;
+  const EYELID_HEIGHT = SIZE * 0.625;
+  const EYELID_OVERFLOW = SIZE * 0.1;
+
   const states = {
-    happy:{
+    happy: {
       irisGradient:
-      "radial-gradient(circle,#15803d 20%,#4ade80 50%,#15803d 80%,#14532d 90%)",
-      pupilSize: 56,
-      eyelidOffset: -100,
+        "radial-gradient(circle,#15803d 20%,#4ade80 50%,#15803d 80%,#14532d 90%)",
+      pupilScale: 0.58,
+      eyelidOffset: -SIZE * 0.62,
       eyelidFollow: 0,
       eyelidRotate: 0,
     },
+
     normal: {
       irisGradient:
-        "radial-gradient(circle, #005E5E 20%, #02cece 50%, #005E5E 80%, #004343 90%)",
-      pupilSize: 48,
-      eyelidOffset: -70,
+        "radial-gradient(circle,#005E5E 20%,#02cece 50%,#005E5E 80%,#004343 90%)",
+      pupilScale: 0.5,
+      eyelidOffset: -SIZE * 0.44,
       eyelidFollow: 0,
       eyelidRotate: 0,
     },
 
     suspicious: {
       irisGradient:
-        "radial-gradient(circle, #7A6500 20%, #FFD700 50%, #B8860B 80%, #7A6500 90%)",
-      pupilSize: 40,
-      eyelidOffset: -30,
+        "radial-gradient(circle,#7A6500 20%,#FFD700 50%,#B8860B 80%,#7A6500 90%)",
+      pupilScale: 0.42,
+      eyelidOffset: -SIZE * 0.18,
       eyelidFollow: 1,
       eyelidRotate: 0,
     },
 
     angry: {
       irisGradient:
-        "radial-gradient(circle, #5C0000 20%, #FF3B3B 50%, #8B0000 80%, #5C0000 90%)",
-      pupilSize: 32,
-      eyelidOffset: -30,
+        "radial-gradient(circle,#5C0000 20%,#FF3B3B 50%,#8B0000 80%,#5C0000 90%)",
+      pupilScale: 0.33,
+      eyelidOffset: -SIZE * 0.18,
       eyelidFollow: 1,
       eyelidRotate: side === "left" ? -15 : 15,
     },
@@ -50,14 +59,15 @@ const Eye = ({side, emotion="normal"}) => {
     const iris = irisRef.current;
     const pupil = pupilRef.current;
 
+    if (!iris || !pupil) return;
+
     iris.style.background = config.irisGradient;
 
     gsap.set(pupil, {
-      width: config.pupilSize,
-      height: config.pupilSize,
+      width: IRIS_SIZE * config.pupilScale,
+      height: IRIS_SIZE * config.pupilScale,
     });
-
-  }, [config]);
+  }, [config, IRIS_SIZE]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -65,6 +75,8 @@ const Eye = ({side, emotion="normal"}) => {
       const iris = irisRef.current;
       const pupil = pupilRef.current;
       const eyelid = eyelidRef.current;
+
+      if (!eye || !iris || !pupil || !eyelid) return;
 
       const rect = eye.getBoundingClientRect();
 
@@ -77,10 +89,9 @@ const Eye = ({side, emotion="normal"}) => {
       const distance = Math.sqrt(dx * dx + dy * dy);
 
       const proximityRadius = 1200;
-      const irisLimit = 40;
-      const pupilLimit = 20;
 
-      
+      const irisLimit = SIZE * 0.25;
+      const pupilLimit = SIZE * 0.125;
 
       if (distance < proximityRadius) {
         const angle = Math.atan2(dy, dx);
@@ -153,45 +164,61 @@ const Eye = ({side, emotion="normal"}) => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [config]);
+  }, [config, SIZE]);
 
   return (
     <div>
       <div
         ref={eyeRef}
-        className="relative w-40 h-40 rounded-full overflow-hidden border-2 border-black"
+        className="relative overflow-hidden rounded-full border-2 border-black bg-gray-400"
         style={{
-          background:
-            "radial-gradient(circle, #FFFFFF 40%, #111111 85%)",
+          width: SIZE,
+          height: SIZE,
         }}
       >
         {/* Eyelid */}
         <div
           ref={eyelidRef}
-          className="absolute -left-4  top-0 bg-black z-30"
+          className="absolute top-0 z-30 bg-black"
           style={{
-            width: "calc(110% + 24px)",
-            height: "100px",
-
+            left: -EYELID_OVERFLOW,
+            width: SIZE + EYELID_OVERFLOW * 2,
+            height: EYELID_HEIGHT,
           }}
         />
+
         {/* Iris */}
         <div
           ref={irisRef}
-          className="absolute left-1/2 top-1/2 z-20 w-24 h-24 -translate-x-1/2 -translate-y-1/2 rounded-full flex items-center justify-center overflow-hidden"
+          className="absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full"
           style={{
-            border: "4px solid black",
+            width: IRIS_SIZE,
+            height: IRIS_SIZE,
+            border: `${BORDER_WIDTH}px solid black`,
           }}
         >
           <div
             ref={pupilRef}
-            className="bg-black rounded-full"
+            className="rounded-full bg-black"
           />
 
-          <div className="absolute top-7 right-3 w-4 h-4 bg-white rounded-full opacity-90 blur-[2px]" />
+          <div
+            className="absolute rounded-full bg-white opacity-90 blur-[1px]"
+            style={{
+              width: HIGHLIGHT_SIZE,
+              height: HIGHLIGHT_SIZE,
+              top: IRIS_SIZE * 0.25,
+              right: IRIS_SIZE * 0.12,
+            }}
+          />
         </div>
 
-        <div className="absolute top-0 left-0 w-full h-8 bg-black/10 blur-md" />
+        <div
+          className="absolute left-0 top-0 w-full bg-black/10 blur-md"
+          style={{
+            height: SIZE * 0.05,
+          }}
+        />
       </div>
     </div>
   );
