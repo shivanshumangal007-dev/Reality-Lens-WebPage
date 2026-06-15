@@ -2,7 +2,7 @@ import Button from "../components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useState } from "react";
-import { Copy, Check } from "lucide-react";
+
 
 import SplitText from "gsap/SplitText";
 gsap.registerPlugin(SplitText);
@@ -13,7 +13,7 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 		platform === "windows(cloud)"
 			? "https://github.com/hannuverma/RealityLens/releases/download/windows.exe/RealityLens.exe"
 			: platform === "mac"
-				? "https://github.com/hannuverma/RealityLens-DEMO/releases/download/v5/RealityLens_Cloud.app.zip"
+				? "https://github.com/shivanshumangal007-dev/realitylens-electron/releases/download/macOS-v1/RealityLens-darwin-arm64-11.2.8.zip"
 				: platform === "linux"
 					? "https://github.com/hannuverma/RealityLens-DEMO/releases/download/linux/RealityLens_Cloud"
 					: "https://github.com/hannuverma/RealityLens-DEMO/releases/download/android_v1/RealityLens.apk";
@@ -23,24 +23,7 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 	};
 
 
-	const command =
-		"curl -fsSL https://your-install-command.sh | bash";
 
-		const [copied, setCopied] = useState(false);
-
-		const handleCopy = async () => {
-		try {
-			await navigator.clipboard.writeText(command);
-
-			setCopied(true);
-
-			setTimeout(() => {
-			setCopied(false);
-			}, 2000);
-		} catch (err) {
-			console.error("Failed to copy:", err);
-		}
-		};
 
 	useGSAP(() => {
     if(isImageLoaded){
@@ -254,14 +237,8 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 				</div>
 				{platform === "mac" && (
 					<div className="
-							absolute
-							top-full
+							relative
 							mt-4
-
-							left-1/2
-							-translate-x-1/2
-							md:left-8
-							md:translate-x-0
 
 							z-50
 
@@ -275,29 +252,22 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 							p-4
 
 							shadow-[0_0_30px_rgba(34,211,238,0.25)]
+							text-left
 						"
   					>	
-						<p className="mb-2 text-white font-medium">
-							macOS installation requires a one-line Terminal command.
-							Copy and run the command below:
+						<p className="mb-3 text-white font-medium text-lg border-b border-cyan-500/30 pb-2">
+							macOS Installation Instructions
 						</p>
-
-						<div className="flex items-center justify-between gap-3">
-							<code className="text-cyan-300 font-mono text-sm overflow-x-auto">
-							{command}
-							</code>
-
-							<button
-							onClick={handleCopy}
-							className="flex-shrink-0 p-2 rounded-lg hover:bg-white/10 transition"
-							>
-							{copied ? (
-								<Check size={18} className="text-green-400" />
-							) : (
-								<Copy size={18} className="text-cyan-300" />
-							)}
-							</button>
-						</div>
+						<p className="text-cyan-300/90 text-sm md:text-base mb-3 font-medium">
+							Note: After downloading and unzipping the file, follow these steps:
+						</p>
+						<ol className="text-gray-300 space-y-2.5 text-sm md:text-base list-decimal pl-5 marker:text-cyan-400">
+							<li><span className="text-white">Open Terminal</span></li>
+							<li>Type: <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">xattr -cr </code></li>
+							<li>Drag <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">RealityLens.app</code> into the Terminal window</li>
+							<li>Press Enter</li>
+							<li>Launch RealityLens again</li>
+						</ol>
 					</div>
 				)}
 			</div>
