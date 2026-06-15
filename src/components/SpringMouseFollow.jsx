@@ -61,7 +61,7 @@ const SpringMouseFollow = () => {
         opacity: opacitySpring,
         scale: scaleSpring,
       }}
-      className="hidden md:visible lg:visible fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none"
+      className="hidden md:block lg:block fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none"
     >
       <Eye emotion="normal" />
     </motion.div>
