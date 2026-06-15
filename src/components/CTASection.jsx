@@ -19,7 +19,7 @@ const CTASection = () => {
 
   return (
     <>
-      <section className="mx-auto mt-20 w-full max-w-5xl px-5 pb-20 md:px-8">
+      <section className="mx-auto mt-20 w-full max-w-5xl px-5 pb-20 md:px-8 pointer-events-auto">
         <div
           className="
             relative overflow-hidden
@@ -41,7 +41,7 @@ const CTASection = () => {
 
           {/* Grid Overlay */}
           <div
-            className="absolute inset-0 opacity-[0.06]"
+            className="absolute inset-0 opacity-[0.2]"
             style={{
               backgroundImage: `
                 linear-gradient(rgba(34,211,238,.3) 1px, transparent 1px),
@@ -84,6 +84,7 @@ const CTASection = () => {
               type="Solid"
               text="Download Now"
               onClick={handleDownload}
+
             />
 
             <p className="text-xs uppercase tracking-[0.15em] text-slate-400">

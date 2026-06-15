@@ -59,7 +59,10 @@ const Eye = ({ side, emotion = "normal" }) => {
     const iris = irisRef.current;
     const pupil = pupilRef.current;
 
-    if (!iris || !pupil) return;
+    if (!iris || !pupil) {
+      console.log("Iris or pupil ref missing in setup");
+      return;
+    }
 
     iris.style.background = config.irisGradient;
 
@@ -67,6 +70,7 @@ const Eye = ({ side, emotion = "normal" }) => {
       width: IRIS_SIZE * config.pupilScale,
       height: IRIS_SIZE * config.pupilScale,
     });
+    console.log("Eye setup complete");
   }, [config, IRIS_SIZE]);
 
   useEffect(() => {
@@ -76,7 +80,19 @@ const Eye = ({ side, emotion = "normal" }) => {
       const pupil = pupilRef.current;
       const eyelid = eyelidRef.current;
 
-      if (!eye || !iris || !pupil || !eyelid) return;
+      // console.log("🎯 Mouse move fired", {
+      //   hasEye: !!eye,
+      //   hasIris: !!iris,
+      //   hasPupil: !!pupil,
+      //   hasEyelid: !!eyelid,
+      //   clientX: e.clientX,
+      //   clientY: e.clientY,
+      // });
+
+      if (!eye || !iris || !pupil || !eyelid) {
+        console.log("❌ Missing refs!");
+        return;
+      }
 
       const rect = eye.getBoundingClientRect();
 
@@ -90,8 +106,8 @@ const Eye = ({ side, emotion = "normal" }) => {
 
       const proximityRadius = 1200;
 
-      const irisLimit = SIZE * 0.25;
-      const pupilLimit = SIZE * 0.125;
+      const irisLimit = SIZE * 0.5;
+      const pupilLimit = SIZE * 0.25;
 
       if (distance < proximityRadius) {
         const angle = Math.atan2(dy, dx);
@@ -103,9 +119,7 @@ const Eye = ({ side, emotion = "normal" }) => {
         const pupilx = Math.cos(angle) * pupilLimit * strength;
         const pupily = Math.sin(angle) * pupilLimit * strength;
 
-        const eyelidY =
-          config.eyelidOffset +
-          irisy * config.eyelidFollow;
+        const eyelidY = config.eyelidOffset + irisy * config.eyelidFollow;
 
         gsap.to(eyelid, {
           y: eyelidY,
@@ -197,10 +211,7 @@ const Eye = ({ side, emotion = "normal" }) => {
             border: `${BORDER_WIDTH}px solid black`,
           }}
         >
-          <div
-            ref={pupilRef}
-            className="rounded-full bg-black"
-          />
+          <div ref={pupilRef} className="rounded-full bg-black" />
 
           <div
             className="absolute rounded-full bg-white opacity-90 blur-[1px]"

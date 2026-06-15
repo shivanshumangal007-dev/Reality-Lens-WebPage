@@ -196,11 +196,11 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 
 			<div
 				className={`relative z-30 text-white flex flex-col gap-6 h-[80vh] px-8  justify-center items-center text-center
-                     md:px-12 md:justify-end md:w-[50vw] md:items-start md:text-left ${isImageLoaded ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+                     md:px-12 md:justify-end md:w-[50vw] md:items-start md:text-left ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
 			>
 				<h1
 					id='headHero'
-					className='text-4xl md:text-5xl lg:text-6xl font-bold leading-[1]'
+					className='text-4xl md:text-5xl lg:text-6xl font-bold leading-[1] pointer-events-none'
 					style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}
 				>
 					Can You <span className='text-cyan-300'>Trust</span> What You See
@@ -208,7 +208,7 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 				</h1>
 				<p
 					id='paraHero'
-					className='text-sm text-center md:text-lg md:text-left w-[80vw] md:w-[50vw]'
+					className='text-sm text-center md:text-lg md:text-left w-[80vw] md:w-[50vw] pointer-events-none'
 					style={{ textShadow: "0 2px 10px rgba(0,0,0,1)" }}
 				>
 					Instantly verify screenshots, deepfakes, and manipulated stats with
