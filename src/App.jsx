@@ -16,13 +16,12 @@ const App = () => {
 
   return (
     <div className='relative bg-black w-screen overflow-hidden'>
-      
-        <div className='z-50'>
-          <SpringMouseFollow/>
+      <div className='absolute inset-0 w-full h-full z-50 pointer-events-none'>
+        <SpringMouseFollow/>
       </div>
       <LenisProvider/>
       <div
-        className="absolute inset-0 opacity-20 z-0 pointer-events-none"
+        className="absolute inset-0 opacity-20 z-0 "
         style={{
           backgroundImage: "url('/images/Stars.jpg')",
           backgroundRepeat: "repeat",
