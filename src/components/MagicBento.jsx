@@ -333,22 +333,12 @@ const GlobalSpotlight = ({
     spotlight.className = 'global-spotlight';
     spotlight.style.cssText = `
       position: fixed;
-      width: 800px;
-      height: 800px;
-      border-radius: 50%;
+      width: ${spotlightRadius * 2}px;
+      height: ${spotlightRadius * 2}px;
       pointer-events: none;
-      background: radial-gradient(circle,
-        rgba(${glowColor}, 0.15) 0%,
-        rgba(${glowColor}, 0.08) 15%,
-        rgba(${glowColor}, 0.04) 25%,
-        rgba(${glowColor}, 0.02) 40%,
-        rgba(${glowColor}, 0.01) 65%,
-        transparent 70%
-      );
-      z-index: 200;
+      z-index: 9999;
       opacity: 0;
       transform: translate(-50%, -50%);
-      mix-blend-mode: screen;
     `;
     document.body.appendChild(spotlight);
     spotlightRef.current = spotlight;
@@ -630,8 +620,12 @@ const MagicBento = ({
         />
       )}
 
-      <BentoCardGrid gridRef={gridRef}>
-        <div className="card-responsive grid gap-2">
+      <div
+        onMouseEnter={() => window.dispatchEvent(new CustomEvent("eye-torch"))}
+        onMouseLeave={() => window.dispatchEvent(new CustomEvent("eye-untorch"))}
+      >
+        <BentoCardGrid gridRef={gridRef}>
+          <div className="card-responsive grid gap-2">
           {cardData.map((card, index) => {
             const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
               enableBorderGlow ? 'card--border-glow' : ''
@@ -809,6 +803,7 @@ const MagicBento = ({
           })}
         </div>
       </BentoCardGrid>
+      </div>
     </>
   );
 };

@@ -44,7 +44,13 @@ const Footer = () => {
                         <a href="#" title="" className="gap-2 flex items-center justify-center text-white transition-all duration-200 bg-cyan-800 rounded-full w-full h-full p-3 hover:bg-cyan-600 focus:bg-cyan-600">
                                 <FaDownload size={18} />
 
-                            <button onClick={handleDownload}><p className='font-body md:text-md lg:text-lg text-white'>Download Now</p></button>
+                            <button 
+                                onClick={handleDownload}
+                                onMouseEnter={(e) => window.dispatchEvent(new CustomEvent('eye-hover', { detail: { element: e.currentTarget, emotion: 'happy' } }))}
+                                onMouseLeave={() => window.dispatchEvent(new CustomEvent('eye-leave'))}
+                            >
+                                <p className='font-body md:text-md lg:text-lg text-white'>Download Now</p>
+                            </button>
                         </a>
                     </li>
                 </ul>
@@ -63,7 +69,22 @@ const Footer = () => {
                     </li>
 
                     <li>
-                        <a href="#HowItWorks" title="" className="flex text-base  transition-all duration-200 hover:text-cyan-600 focus:text-cyan-600"> How It Works </a>
+                        <a 
+                            href="#HowItWorks" 
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const element = document.querySelector('#HowItWorks');
+                                if (element && window.lenis) {
+                                    window.lenis.scrollTo(element, { offset: 400 });
+                                } else {
+                                    element?.scrollIntoView();
+                                }
+                            }}
+                            title="" 
+                            className="flex text-base  transition-all duration-200 hover:text-cyan-600 focus:text-cyan-600"
+                        > 
+                            How It Works 
+                        </a>
                     </li>
 
                 </ul>

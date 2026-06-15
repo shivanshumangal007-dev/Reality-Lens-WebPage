@@ -84,7 +84,8 @@ const CTASection = () => {
               type="Solid"
               text="Download Now"
               onClick={handleDownload}
-
+              onMouseEnter={(e) => window.dispatchEvent(new CustomEvent('eye-hover', { detail: { element: e.currentTarget, emotion: 'happy' } }))}
+              onMouseLeave={() => window.dispatchEvent(new CustomEvent('eye-leave'))}
             />
 
             <p className="text-xs uppercase tracking-[0.15em] text-slate-400">

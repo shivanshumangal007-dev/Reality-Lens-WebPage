@@ -140,6 +140,15 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 						</a>
 						<a
 							href='#HowItWorks'
+							onClick={(e) => {
+								e.preventDefault();
+								const element = document.querySelector('#HowItWorks');
+								if (element && window.lenis) {
+									window.lenis.scrollTo(element, { offset: 400 });
+								} else {
+									element?.scrollIntoView();
+								}
+							}}
 							className='text-xl  hover:text-white'
 						>
 							How It Works
@@ -149,6 +158,8 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 						type='Solid'
 						text='Download Now'
 						onClick={handleDownload}
+						onMouseEnter={(e) => window.dispatchEvent(new CustomEvent('eye-hover', { detail: { element: e.currentTarget, emotion: 'happy' } }))}
+						onMouseLeave={() => window.dispatchEvent(new CustomEvent('eye-leave'))}
 					/>
 				</div>
 			</nav>
@@ -264,6 +275,8 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 					<Button
 						type='Solid'
 						onClick={handleDownload}
+						onMouseEnter={(e) => window.dispatchEvent(new CustomEvent('eye-hover', { detail: { element: e.currentTarget, emotion: 'happy' } }))}
+						onMouseLeave={() => window.dispatchEvent(new CustomEvent('eye-leave'))}
 						className=' hover:cursor-pointer px-2  max-h-12 h-[10vw] w-[40vw] rounded-full text-white  bg-cyan-800 border border-cyan-300/20
                  hover:border-cyan-100 hover:shadow-[0_0_32px_rgba(0,213,255,0.6)] transition-all duration-300
                  shadow-[inset_0_4px_10px_rgba(0,0,0,0.6),inset_0_-4px_10px_rgba(0,255,255,0.4)]

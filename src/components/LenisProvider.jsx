@@ -14,6 +14,8 @@ const LenisProvider = () => {
       smoothWheel: true,
     });
 
+    window.lenis = lenis;
+
     lenis.on("scroll", ScrollTrigger.update);
 
     const update = (time) => {
