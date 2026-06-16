@@ -140,6 +140,15 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 						</a>
 						<a
 							href='#HowItWorks'
+							onClick={(e) => {
+								e.preventDefault();
+								const element = document.querySelector('#HowItWorks');
+								if (element && window.lenis) {
+									window.lenis.scrollTo(element, { offset: 400 });
+								} else {
+									element?.scrollIntoView();
+								}
+							}}
 							className='text-xl  hover:text-white'
 						>
 							How It Works
@@ -149,6 +158,8 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 						type='Solid'
 						text='Download Now'
 						onClick={handleDownload}
+						onMouseEnter={(e) => window.dispatchEvent(new CustomEvent('eye-hover', { detail: { element: e.currentTarget, emotion: 'happy' } }))}
+						onMouseLeave={() => window.dispatchEvent(new CustomEvent('eye-leave'))}
 					/>
 				</div>
 			</nav>
@@ -157,13 +168,50 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 				className={`relative z-20 h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-200 to-transparent ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
 			></div>
 
+			{platform === "mac" && (
+					<div className="
+							absolute
+							right-4 bottom-64
+							mt-4
+
+							z-50
+
+							w-[90vw]
+							max-w-[760px]
+
+							rounded-2xl
+							border border-cyan-400/30
+							bg-black/80
+							backdrop-blur-md
+							p-4
+
+							shadow-[0_0_30px_rgba(34,211,238,0.25)]
+							text-left
+						"
+  					>	
+						<p className="mb-3 text-white font-medium text-lg border-b border-cyan-500/30 pb-2">
+							macOS Installation Instructions
+						</p>
+						<p className="text-cyan-300/90 text-sm md:text-base mb-3 font-medium">
+							Note: After downloading and unzipping the file, follow these steps:
+						</p>
+						<ol className="text-gray-300 space-y-2.5 text-sm md:text-base list-decimal pl-5 marker:text-cyan-400">
+							<li><span className="text-white">Open Terminal</span></li>
+							<li>Type: <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">xattr -cr </code></li>
+							<li>Drag <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">RealityLens.app</code> into the Terminal window</li>
+							<li>Press Enter</li>
+							<li>Launch RealityLens again</li>
+						</ol>
+					</div>
+				)}
+
 			<div
 				className={`relative z-30 text-white flex flex-col gap-6 h-[80vh] px-8  justify-center items-center text-center
-                     md:px-12 md:justify-end md:w-[50vw] md:items-start md:text-left ${isImageLoaded ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+                     md:px-12 md:justify-end md:w-[50vw] md:items-start md:text-left ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
 			>
 				<h1
 					id='headHero'
-					className='text-4xl md:text-5xl lg:text-6xl font-bold leading-[1]'
+					className='text-4xl md:text-5xl lg:text-6xl font-bold leading-[1] pointer-events-none'
 					style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}
 				>
 					Can You <span className='text-cyan-300'>Trust</span> What You See
@@ -171,7 +219,7 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 				</h1>
 				<p
 					id='paraHero'
-					className='text-sm text-center md:text-lg md:text-left w-[80vw] md:w-[50vw]'
+					className='text-sm text-center md:text-lg md:text-left w-[80vw] md:w-[50vw] pointer-events-none'
 					style={{ textShadow: "0 2px 10px rgba(0,0,0,1)" }}
 				>
 					Instantly verify screenshots, deepfakes, and manipulated stats with
@@ -227,6 +275,8 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 					<Button
 						type='Solid'
 						onClick={handleDownload}
+						onMouseEnter={(e) => window.dispatchEvent(new CustomEvent('eye-hover', { detail: { element: e.currentTarget, emotion: 'happy' } }))}
+						onMouseLeave={() => window.dispatchEvent(new CustomEvent('eye-leave'))}
 						className=' hover:cursor-pointer px-2  max-h-12 h-[10vw] w-[40vw] rounded-full text-white  bg-cyan-800 border border-cyan-300/20
                  hover:border-cyan-100 hover:shadow-[0_0_32px_rgba(0,213,255,0.6)] transition-all duration-300
                  shadow-[inset_0_4px_10px_rgba(0,0,0,0.6),inset_0_-4px_10px_rgba(0,255,255,0.4)]
@@ -235,41 +285,7 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 						Download for {platform.charAt(0).toUpperCase() + platform.slice(1)}
 					</Button>
 				</div>
-				{platform === "mac" && (
-					<div className="
-							relative
-							mt-4
-
-							z-50
-
-							w-[90vw]
-							max-w-[760px]
-
-							rounded-2xl
-							border border-cyan-400/30
-							bg-black/80
-							backdrop-blur-md
-							p-4
-
-							shadow-[0_0_30px_rgba(34,211,238,0.25)]
-							text-left
-						"
-  					>	
-						<p className="mb-3 text-white font-medium text-lg border-b border-cyan-500/30 pb-2">
-							macOS Installation Instructions
-						</p>
-						<p className="text-cyan-300/90 text-sm md:text-base mb-3 font-medium">
-							Note: After downloading and unzipping the file, follow these steps:
-						</p>
-						<ol className="text-gray-300 space-y-2.5 text-sm md:text-base list-decimal pl-5 marker:text-cyan-400">
-							<li><span className="text-white">Open Terminal</span></li>
-							<li>Type: <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">xattr -cr </code></li>
-							<li>Drag <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">RealityLens.app</code> into the Terminal window</li>
-							<li>Press Enter</li>
-							<li>Launch RealityLens again</li>
-						</ol>
-					</div>
-				)}
+				
 			</div>
 		</section>
 	);

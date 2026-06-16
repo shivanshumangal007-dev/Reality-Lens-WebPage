@@ -1,10 +1,12 @@
-const Button = ({type,text, children, className = "", onClick}) => {
+const Button = ({type,text, children, className = "", onClick, onMouseEnter, onMouseLeave}) => {
 
     if(type==="Solid"){
         return (
           <button
             type="button"
             onClick={onClick}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
             className={className || `
                 px-2  max-h-12
                 h-[8vw] w-[30vw]

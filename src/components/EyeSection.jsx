@@ -270,6 +270,10 @@ const EyeSection = () => {
                                         : type === "suspicious"
                                         ? "0 0 30px rgba(255, 200, 0, 0.9)"
                                         : "0 0 30px rgba(0, 255, 180, 0.9)";
+
+                                window.dispatchEvent(new CustomEvent("eye-hover", {
+                                    detail: { emotion: type, element: e.currentTarget }
+                                }));
                             }}
                             onMouseLeave={(e) => {
                                 hoverTimeout.current = setTimeout(() => {
@@ -277,6 +281,7 @@ const EyeSection = () => {
                                 }, 150);
 
                                 e.currentTarget.style.boxShadow = "none";
+                                window.dispatchEvent(new CustomEvent("eye-leave"));
                             }}
                         >
                             <Posts image={image} />
@@ -286,12 +291,12 @@ const EyeSection = () => {
             </div>
 
             {/* EYE */}
-            <div
+            {/* <div
                 id="eye"
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex scale-75 md:scale-100"
             >
                 <Eye side="left" emotion={emotion} />
-            </div>
+            </div> */}
         </section>
     </div>
 );

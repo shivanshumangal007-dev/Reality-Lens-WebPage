@@ -34,11 +34,16 @@ const HowToSection = () => {
         },
       });
 
+     tl.to("#scroll-indicator", {
+        opacity: 0,
+        duration: 0.1,
+      }, 0);
+
      tl.from("#title1", {
         opacity: 0,
         yPercent: 30,
         duration: 0.25,
-      });
+      }, 0);
 
       tl.from(
         "#Xwindow",
@@ -366,6 +371,16 @@ tl.fromTo(
 				className='absolute right-0 w-[16vw] top-[-10%] opacity-30'
 				src='./images/HowToSection/TriGrad.png'
 			/>
+
+			<div
+				id='scroll-indicator'
+				className='absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-70'
+			>
+				<span className='text-xs text-cyan-300 font-medium mb-2 tracking-widest uppercase'>Scroll</span>
+				<div className='w-5 h-8 border-2 border-cyan-300/50 rounded-full flex justify-center p-1'>
+					<div className='w-1 h-2 bg-cyan-300 rounded-full animate-bounce'></div>
+				</div>
+			</div>
 
 			<div className='overflow-hidden mask-[linear-gradient(to_bottom,black_70%,transparent_100%)] [--webkit-mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]'></div>
 		</section>
