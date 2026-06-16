@@ -195,13 +195,21 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 						<p className="text-cyan-300/90 text-sm md:text-base mb-3 font-medium">
 							Note: After downloading and unzipping the file, follow these steps:
 						</p>
-						<ol className="text-gray-300 space-y-2.5 text-sm md:text-base list-decimal pl-5 marker:text-cyan-400">
+						<ol className="text-gray-300 space-y-2.5 text-sm md:text-base list-decimal pl-5 marker:text-cyan-400 mb-4">
 							<li><span className="text-white">Open Terminal</span></li>
 							<li>Type: <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">xattr -cr </code></li>
 							<li>Drag <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">RealityLens.app</code> into the Terminal window</li>
 							<li>Press Enter</li>
 							<li>Launch RealityLens again</li>
 						</ol>
+						<p className="text-cyan-300/90 text-sm md:text-base mb-2 font-medium">
+							Troubleshooting Claims:
+						</p>
+						<ul className="text-gray-300 space-y-1.5 text-sm md:text-base list-disc pl-5 marker:text-cyan-400">
+							<li>If taking a claim creates a problem, grant permissions in System Settings:</li>
+							<li><span className="text-white">Privacy &amp; Security</span> &gt; <span className="text-white">Accessibility</span> &gt; toggle RealityLens.</li>
+							<li><span className="text-white">Privacy &amp; Security</span> &gt; <span className="text-white">Screen Recording</span> &gt; toggle RealityLens.</li>
+						</ul>
 					</div>
 				)}
 
