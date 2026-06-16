@@ -13,7 +13,7 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 		platform === "windows(cloud)"
 			? "https://github.com/hannuverma/RealityLens/releases/download/windows.exe/RealityLens.exe"
 			: platform === "mac"
-				? "https://github.com/shivanshumangal007-dev/realitylens-electron/releases/download/macOS-v1/RealityLens-darwin-arm64-11.2.8.zip"
+				? "https://github.com/shivanshumangal007-dev/realitylens-electron/releases/download/macos/RealityLens.zip"
 				: platform === "linux"
 					? "https://github.com/hannuverma/RealityLens-DEMO/releases/download/linux/RealityLens_Cloud"
 					: "https://github.com/hannuverma/RealityLens-DEMO/releases/download/android_v1/RealityLens.apk";
@@ -196,7 +196,7 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 						id=''
 						value={platform}
 						onChange={(e) => setPlatform(e.target.value)}
-						className='w-full text-sm md:text-lg '
+						className='w-full text-sm md:text-lg outline-none'
 					>
 						<option
 							className='bg-black text-white'
