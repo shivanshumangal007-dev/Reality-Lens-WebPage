@@ -6,12 +6,12 @@ const CTASection = () => {
 
   const downloadLink =
     platform === "windows(cloud)"
-      ? "https://github.com/hannuverma/RealityLens/releases/download/windows.exe/RealityLens.exe"
+      ? import.meta.env.VITE_DOWNLOAD_LINK_WINDOWS
       : platform === "mac"
-      ? "https://github.com/hannuverma/RealityLens-DEMO/releases/download/v5/RealityLens_Cloud.app.zip"
+      ? import.meta.env.VITE_DOWNLOAD_LINK_MAC
       : platform === "linux"
-      ? "https://github.com/hannuverma/RealityLens-DEMO/releases/download/linux/RealityLens_Cloud"
-      : "https://github.com/hannuverma/RealityLens-DEMO/releases/download/android_v1/RealityLens.apk";
+      ? import.meta.env.VITE_DOWNLOAD_LINK_LINUX
+      : import.meta.env.VITE_DOWNLOAD_LINK_ANDROID;
 
   const handleDownload = () => {
     window.location.href = downloadLink;

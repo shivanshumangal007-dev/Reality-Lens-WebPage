@@ -11,12 +11,12 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 	const [platform, setPlatform] = useState("windows(cloud)");
 	const downloadLink =
 		platform === "windows(cloud)"
-			? "https://github.com/hannuverma/RealityLens/releases/download/windows.exe/RealityLens.exe"
+			? import.meta.env.VITE_DOWNLOAD_LINK_WINDOWS
 			: platform === "mac"
-				? "https://github.com/shivanshumangal007-dev/realitylens-electron/releases/download/macos/RealityLens.zip"
+				? import.meta.env.VITE_DOWNLOAD_LINK_MAC
 				: platform === "linux"
-					? "https://github.com/hannuverma/RealityLens-DEMO/releases/download/linux/RealityLens_Cloud"
-					: "https://github.com/hannuverma/RealityLens-DEMO/releases/download/android_v1/RealityLens.apk";
+					? import.meta.env.VITE_DOWNLOAD_LINK_LINUX
+					: import.meta.env.VITE_DOWNLOAD_LINK_ANDROID;
 
 	const handleDownload = () => {
 		window.location.href = downloadLink;
