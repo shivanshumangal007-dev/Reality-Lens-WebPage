@@ -34,7 +34,7 @@ const Footer = () => {
                    
 
                     <li>
-                        <a href="https://github.com/hannuverma/RealityLens.git" title="" className="flex items-center gap-2 justify-center text-white transition-all duration-200 bg-cyan-800 rounded-full w-full h-full p-3 hover:bg-cyan-600 focus:bg-cyan-600">
+                        <a href="https://github.com/hannuverma/RealityLens.git" target="_blank" rel="noopener noreferrer" title="" className="flex items-center gap-2 justify-center text-white transition-all duration-200 bg-cyan-800 rounded-full w-full h-full p-3 hover:bg-cyan-600 focus:bg-cyan-600">
                                 <FaGithub size={20} />
 
                             <p className='font-body md:text-md lg:text-lg text-white'>GitHub Repository</p>
@@ -95,19 +95,19 @@ const Footer = () => {
 
                 <ul className="mt-6 space-y-4">
                     <li>
-                        <a href="https://www.linkedin.com/in/shivanshu-mangal-8a601b378/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrHSFpVKsTWKvPtA6GrdNJA%3D%3D" title="" className="flex text-base transition-all duration-200 hover:text-cyan-600  "> Shivanshu Mangal </a>
+                        <a href="https://www.linkedin.com/in/shivanshu-mangal-8a601b378/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrHSFpVKsTWKvPtA6GrdNJA%3D%3D" target="_blank" rel="noopener noreferrer" title="" className="flex text-base transition-all duration-200 hover:text-cyan-600  "> Shivanshu Mangal </a>
                     </li>
 
                     <li>
-                        <a href="https://www.linkedin.com/in/hannu-verma-b6930b2b7/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BzYLjXisdRSCpzrQhxieaRQ%3D%3D" title="" className="flex text-base transition-all duration-200 hover:text-cyan-600 "> Hannu Verma </a>
+                        <a href="https://www.linkedin.com/in/hannu-verma-b6930b2b7/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BzYLjXisdRSCpzrQhxieaRQ%3D%3D" target="_blank" rel="noopener noreferrer" title="" className="flex text-base transition-all duration-200 hover:text-cyan-600 "> Hannu Verma </a>
                     </li>
 
                     <li>
-                        <a href="https://www.linkedin.com/in/reyansh-bhardwaj-6b2b59384/overlay/contact-info/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B4CGl8xxwSp2wm%2BqjMyia6w%3D%3D" title="" className="flex text-base transition-all duration-200 hover:text-cyan-600 "> Reyansh Bhardwaj </a>
+                        <a href="https://www.linkedin.com/in/reyansh-bhardwaj-6b2b59384/overlay/contact-info/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B4CGl8xxwSp2wm%2BqjMyia6w%3D%3D" target="_blank" rel="noopener noreferrer" title="" className="flex text-base transition-all duration-200 hover:text-cyan-600 "> Reyansh Bhardwaj </a>
                     </li>
 
                     <li>
-                        <a href="https://www.linkedin.com/in/shreyansh-kumar-1319ba381/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRJWq1uG0Qe6UQKVqqyKj4w%3D%3D" title="" className="flex text-base transition-all duration-200 hover:text-cyan-600 "> Shreyansh Kumar </a>
+                        <a href="https://www.linkedin.com/in/shreyansh-kumar-1319ba381/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BRJWq1uG0Qe6UQKVqqyKj4w%3D%3D" target="_blank" rel="noopener noreferrer" title="" className="flex text-base transition-all duration-200 hover:text-cyan-600 "> Shreyansh Kumar </a>
                     </li>
                 </ul>
             </div>

@@ -128,6 +128,8 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 					<div className='hidden md:flex gap-6'>
 						<a
 							href='https://github.com/hannuverma/RealityLens.git'
+							target='_blank'
+							rel='noopener noreferrer'
 							className='text-xl  hover:text-white'
 						>
 							GitHub
