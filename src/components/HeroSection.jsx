@@ -220,6 +220,36 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 					</div>
 				)}
 
+			{platform === "linux" && (
+					<div className="
+							absolute
+							right-4 bottom-64
+							mt-4
+
+							z-50
+
+							w-[90vw]
+							max-w-[760px]
+
+							rounded-2xl
+							border border-cyan-400/30
+							bg-black/80
+							backdrop-blur-md
+							p-4
+
+							shadow-[0_0_30px_rgba(34,211,238,0.25)]
+							text-left
+						"
+  					>	
+						<p className="mb-3 text-white font-medium text-lg border-b border-cyan-500/30 pb-2">
+							Linux Installation Instructions
+						</p>
+						<p className="text-cyan-300/90 text-sm md:text-base mb-3 font-medium">
+							Note: After installing the .appimage file make it executable as program and run it.
+						</p>
+					</div>
+				)}
+
 			<div
 				className={`relative z-30 text-white flex flex-col gap-6 h-[80vh] px-8  justify-center items-center text-center
                      md:px-12 md:justify-end md:w-[50vw] md:items-start md:text-left ${isImageLoaded ? "opacity-100" : "opacity-0"}`}
