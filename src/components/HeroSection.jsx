@@ -193,23 +193,28 @@ const HeroSection = ({ isImageLoaded, setIsImageLoaded }) => {
 							macOS Installation Instructions
 						</p>
 						<p className="text-cyan-300/90 text-sm md:text-base mb-3 font-medium">
-							Note: After downloading and unzipping the file, follow these steps:
+							Note: After downloading the .dmg file, follow these steps:
 						</p>
 						<ol className="text-gray-300 space-y-2.5 text-sm md:text-base list-decimal pl-5 marker:text-cyan-400 mb-4">
-							<li><span className="text-white">Open Terminal</span></li>
-							<li>Type: <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">xattr -cr </code></li>
-							<li>Drag <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">RealityLens.app</code> into the Terminal window</li>
-							<li>Press Enter</li>
-							<li>Launch RealityLens again</li>
+							<li>Open the downloaded <span className="text-white">.dmg</span> file.</li>
+							<li>Drag <code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50">RealityLens.app</code> into the Applications folder.</li>
+							<li>Launch RealityLens from Applications and sign in.</li>
 						</ol>
 						<p className="text-cyan-300/90 text-sm md:text-base mb-2 font-medium">
-							Troubleshooting Claims:
+							Required Permissions:
 						</p>
 						<ul className="text-gray-300 space-y-1.5 text-sm md:text-base list-disc pl-5 marker:text-cyan-400">
-							<li>If taking a claim creates a problem, grant permissions in System Settings:</li>
+							<li>To ensure all features work correctly, please grant the following permissions in System Settings:</li>
 							<li><span className="text-white">Privacy &amp; Security</span> &gt; <span className="text-white">Accessibility</span> &gt; toggle RealityLens.</li>
 							<li><span className="text-white">Privacy &amp; Security</span> &gt; <span className="text-white">Screen Recording</span> &gt; toggle RealityLens.</li>
 						</ul>
+						<p className="text-cyan-300/90 text-sm md:text-base mt-4 mb-2 font-medium">
+							"App is damaged" error?
+						</p>
+						<p className="text-gray-300 text-sm md:text-base pl-5 mb-2">
+							If macOS says the app is damaged, open Terminal and run:<br/>
+							<code className="text-cyan-300 font-mono bg-cyan-950/50 px-1.5 py-0.5 rounded border border-cyan-800/50 mt-2 inline-block">xattr -cr /Applications/RealityLens.app</code>
+						</p>
 					</div>
 				)}
 
